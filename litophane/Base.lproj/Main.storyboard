@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Picked Color Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="color-picker.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRS-Xt-C1R" customClass="ColorPickerImageView">
+                                <rect key="frame" x="177" y="136" width="247" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="b5m-0k-XNu"/>
+                                    <constraint firstAttribute="height" constant="95" id="kjS-aj-L1y"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="pickedColorDelegate" destination="BYZ-38-t0r" id="yiB-x4-LGG"/>
+                                </connections>
+                            </imageView>
+                            <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2f-2n-ayK" customClass="ColorPickerLens">
+                                <rect key="frame" x="323" y="239" width="66" height="115"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="IP: ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-0A-OJR">
+                                <rect key="frame" x="224" y="28" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-Rw-Bl6">
+                                <rect key="frame" x="175" y="77" width="251" height="31"/>
+                                <connections>
+                                    <action selector="brightnessChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4od-22-QDB"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-oK-3rl">
+                                <rect key="frame" x="238" y="257" width="125" height="30"/>
+                                <state key="normal" title="Rainbow"/>
+                                <connections>
+                                    <action selector="rainbow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fy6-tE-ZMl"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="2" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPO-82-oA2">
+                                <rect key="frame" x="0.0" y="300" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="467308800.005436">
+                                    <!--2015-10-23 16:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-07-GEe">
+                                <rect key="frame" x="204" y="532" width="193" height="30"/>
+                                <state key="normal" title="Set Wake Time"/>
+                                <connections>
+                                    <action selector="setWakeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7b-h9-tHc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pRS-Xt-C1R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cu-YL-qzK"/>
+                            <constraint firstItem="ySX-07-GEe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fwk-Cf-QFk"/>
+                            <constraint firstItem="cPO-82-oA2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MBV-gA-AYM"/>
+                            <constraint firstItem="fT0-Rw-Bl6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xoi-nP-bnP"/>
+                            <constraint firstItem="oHN-0A-OJR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nl5-o5-AZV"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zdw-RW-deS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="pRS-Xt-C1R" id="VLy-YO-9W5"/>
+                        <outlet property="labelIP" destination="oHN-0A-OJR" id="U5e-EL-28A"/>
+                        <outlet property="pickerLens" destination="z2f-2n-ayK" id="HX4-rL-QvA"/>
+                        <outlet property="sliderBrightness" destination="fT0-Rw-Bl6" id="p9Z-cu-0TR"/>
+                        <outlet property="wakeTimePicker" destination="cPO-82-oA2" id="ea8-Lw-fIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="232" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="color-picker.png" width="247" height="95"/>
+    </resources>
 </document>
