@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC3EF5831BD9F374005062AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EF5821BD9F374005062AE /* main.m */; };
+		EC3EF5861BD9F374005062AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EF5851BD9F374005062AE /* AppDelegate.m */; };
+		EC3EF5891BD9F374005062AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EF5881BD9F374005062AE /* ViewController.m */; };
+		EC3EF58C1BD9F374005062AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3EF58A1BD9F374005062AE /* Main.storyboard */; };
+		EC3EF58E1BD9F374005062AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC3EF58D1BD9F374005062AE /* Assets.xcassets */; };
+		EC3EF5911BD9F374005062AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3EF58F1BD9F374005062AE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC3EF57E1BD9F374005062AE /* litophane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litophane.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3EF5821BD9F374005062AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC3EF5841BD9F374005062AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC3EF5851BD9F374005062AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC3EF5871BD9F374005062AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC3EF5881BD9F374005062AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC3EF58B1BD9F374005062AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC3EF58D1BD9F374005062AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC3EF5901BD9F374005062AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC3EF5921BD9F374005062AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC3EF57B1BD9F374005062AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC3EF5751BD9F374005062AE = {
+			isa = PBXGroup;
+			children = (
+				EC3EF5801BD9F374005062AE /* litophane */,
+				EC3EF57F1BD9F374005062AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC3EF57F1BD9F374005062AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EF57E1BD9F374005062AE /* litophane.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC3EF5801BD9F374005062AE /* litophane */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EF5841BD9F374005062AE /* AppDelegate.h */,
+				EC3EF5851BD9F374005062AE /* AppDelegate.m */,
+				EC3EF5871BD9F374005062AE /* ViewController.h */,
+				EC3EF5881BD9F374005062AE /* ViewController.m */,
+				EC3EF58A1BD9F374005062AE /* Main.storyboard */,
+				EC3EF58D1BD9F374005062AE /* Assets.xcassets */,
+				EC3EF58F1BD9F374005062AE /* LaunchScreen.storyboard */,
+				EC3EF5921BD9F374005062AE /* Info.plist */,
+				EC3EF5811BD9F374005062AE /* Supporting Files */,
+			);
+			path = litophane;
+			sourceTree = "<group>";
+		};
+		EC3EF5811BD9F374005062AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EF5821BD9F374005062AE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC3EF57D1BD9F374005062AE /* litophane */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3EF5951BD9F374005062AE /* Build configuration list for PBXNativeTarget "litophane" */;
+			buildPhases = (
+				EC3EF57A1BD9F374005062AE /* Sources */,
+				EC3EF57B1BD9F374005062AE /* Frameworks */,
+				EC3EF57C1BD9F374005062AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = litophane;
+			productName = litophane;
+			productReference = EC3EF57E1BD9F374005062AE /* litophane.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC3EF5761BD9F374005062AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Gustavo Ambrozio";
+				TargetAttributes = {
+					EC3EF57D1BD9F374005062AE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = EC3EF5791BD9F374005062AE /* Build configuration list for PBXProject "litophane" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC3EF5751BD9F374005062AE;
+			productRefGroup = EC3EF57F1BD9F374005062AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC3EF57D1BD9F374005062AE /* litophane */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC3EF57C1BD9F374005062AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3EF5911BD9F374005062AE /* LaunchScreen.storyboard in Resources */,
+				EC3EF58E1BD9F374005062AE /* Assets.xcassets in Resources */,
+				EC3EF58C1BD9F374005062AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC3EF57A1BD9F374005062AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3EF5891BD9F374005062AE /* ViewController.m in Sources */,
+				EC3EF5861BD9F374005062AE /* AppDelegate.m in Sources */,
+				EC3EF5831BD9F374005062AE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC3EF58A1BD9F374005062AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC3EF58B1BD9F374005062AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC3EF58F1BD9F374005062AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC3EF5901BD9F374005062AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC3EF5931BD9F374005062AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC3EF5941BD9F374005062AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC3EF5961BD9F374005062AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = litophane/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.eng.gustavo.litophane;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC3EF5971BD9F374005062AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = litophane/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.eng.gustavo.litophane;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC3EF5791BD9F374005062AE /* Build configuration list for PBXProject "litophane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3EF5931BD9F374005062AE /* Debug */,
+				EC3EF5941BD9F374005062AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC3EF5951BD9F374005062AE /* Build configuration list for PBXNativeTarget "litophane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3EF5961BD9F374005062AE /* Debug */,
+				EC3EF5971BD9F374005062AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC3EF5761BD9F374005062AE /* Project object */;
+}
