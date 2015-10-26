@@ -320,6 +320,7 @@
 				EC3EF5971BD9F374005062AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
