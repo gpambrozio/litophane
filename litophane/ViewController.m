@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet ColorPickerImageView *colorPicker;
 @property (weak, nonatomic) IBOutlet ColorPickerLens *pickerLens;
 @property (weak, nonatomic) IBOutlet UILabel *labelIP;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 @property (weak, nonatomic) IBOutlet UISlider *sliderBrightness;
 @property (weak, nonatomic) IBOutlet UIDatePicker *wakeTimePicker;
 
@@ -59,6 +60,13 @@
     });
 }
 
+- (void)setStatus:(NSString *)status {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.labelStatus.text = status;
+    });
+    NSLog(@"Status: %@", status);
+}
+
 - (void)sendCommand:(NSString *)command {
     if (!self.litophaneIP) {
         return;
@@ -79,14 +87,14 @@
                                                                                                        encoding:NSUTF8StringEncoding];
 
                                                             if ([response hasPrefix:@"OK"]) {
-                                                                NSLog(@"OK for command %@", command);
+                                                                [self setStatus:[NSString stringWithFormat:@"OK for command %@", command]];
                                                             } else {
-                                                                NSLog(@"Weird response for command %@: %@", command, response);
+                                                                [self setStatus:[NSString stringWithFormat:@"Weird response for command %@: %@", command, response]];
                                                             }
                                                         }
 
                                                         else if (error) {
-                                                            NSLog(@"Got error for command %@: %@", command, error);
+                                                            [self setStatus:[NSString stringWithFormat:@"Got error for command %@: %@", command, error]];
                                                         }
                                                     }];
         [task resume];
@@ -122,6 +130,21 @@
     return address;
 }
 
+- (void)checkQueueAndIP {
+    if (self.litophaneIP) {
+        return;
+    }
+
+    if (self.discoveryQueue.operationCount == 0) {
+        [self setStatus:@"Litophane not found. Trying again"];
+        [self startDiscovery];
+    } else {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self checkQueueAndIP];
+        });
+    }
+}
+
 - (void)startDiscovery {
     NSString *myIP = [self getIPAddress];
     NSLog(@"My IP: %@", myIP);
@@ -155,6 +178,10 @@
             [task resume];
         }]];
     }
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self checkQueueAndIP];
+    });
 }
 
 - (IBAction)brightnessChanged:(UISlider *)sender {
