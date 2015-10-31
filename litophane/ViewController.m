@@ -192,6 +192,10 @@
     [self sendCommand:@"r"];
 }
 
+- (IBAction)onOff:(id)sender {
+    [self sendCommand:@"p"];
+}
+
 - (IBAction)setWakeTime:(id)sender {
     NSDate *date = self.wakeTimePicker.date;
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
