@@ -44,19 +44,13 @@
     configuration.HTTPMaximumConnectionsPerHost = 1;
     self.urlSession = [NSURLSession sessionWithConfiguration:configuration];
 
-    [self startDiscovery];
+    self.litophaneIP = @"litho.local";
 }
 
 - (void)setLitophaneIP:(NSString *)litophaneIP {
     _litophaneIP = litophaneIP;
     dispatch_async(dispatch_get_main_queue(), ^{
         self.labelIP.text = [NSString stringWithFormat:@"IP: %@", self.litophaneIP];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"ssmmHHeddMMyy";
-        NSString *date = [formatter stringFromDate:[NSDate date]];
-        [self sendCommand:[NSString stringWithFormat:@"t%@", date]];
     });
 }
 
@@ -137,7 +131,6 @@
 
     if (self.discoveryQueue.operationCount == 0) {
         [self setStatus:@"Litophane not found. Trying again"];
-        [self startDiscovery];
     } else {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self checkQueueAndIP];
@@ -145,47 +138,8 @@
     }
 }
 
-- (void)startDiscovery {
-    NSString *myIP = [self getIPAddress];
-    NSLog(@"My IP: %@", myIP);
-    NSArray *components = [myIP componentsSeparatedByString:@"."];
-    NSString *baseIP = [NSString stringWithFormat:@"%@.%@.%@.%%d", components[0], components[1], components[2]];
-
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-    configuration.HTTPMaximumConnectionsPerHost = 10;
-    self.discoveryURLSession = [NSURLSession sessionWithConfiguration:configuration];
-
-    NSString *baseURL = @"http://%@/i";
-    for (int i = 1; i < 255; i++) {
-        NSString *ip = [NSString stringWithFormat:baseIP, i];
-        NSString *url = [NSString stringWithFormat:baseURL, ip];
-        [self.discoveryQueue addOperation:[NSBlockOperation blockOperationWithBlock:^{
-            NSURLSessionDataTask *task = [self.discoveryURLSession dataTaskWithURL:[NSURL URLWithString:url]
-                                                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                                                                     if (data) {
-                                                                         NSString *response = [[NSString alloc] initWithData:data
-                                                                                                                    encoding:NSUTF8StringEncoding];
-
-                                                                         if ([response hasPrefix:@"OK"]) {
-                                                                             NSLog(@"Found litophane @ %@", ip);
-                                                                             self.litophaneIP = ip;
-                                                                             [self.discoveryQueue cancelAllOperations];
-                                                                             [self.discoveryURLSession invalidateAndCancel];
-                                                                             self.discoveryURLSession = nil;
-                                                                         }
-                                                                     }
-                                                                 }];
-            [task resume];
-        }]];
-    }
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self checkQueueAndIP];
-    });
-}
-
 - (IBAction)brightnessChanged:(UISlider *)sender {
-    [self sendCommand:[NSString stringWithFormat:@"b%.0f", sender.value]];
+    [self sendCommand:[NSString stringWithFormat:@"b?a=%.0f", sender.value]];
 }
 
 - (IBAction)rainbow:(id)sender {
@@ -202,7 +156,7 @@
     NSDateComponents *comps = [gregorian components:NSCalendarUnitHour | NSCalendarUnitMinute
                                            fromDate:date];
     long seconds = comps.hour * 3600 + comps.minute * 60;
-    [self sendCommand:[NSString stringWithFormat:@"w%ld", seconds]];
+    [self sendCommand:[NSString stringWithFormat:@"w?a=%ld", seconds]];
 }
 
 #pragma mark - ColorPickerImageViewDelegate
@@ -216,7 +170,7 @@
     CGFloat r, g, b, a;
     [color getRed:&r green:&g blue:&b alpha:&a];
     long fullColor = ((int)(r*255)) << 16 | ((int)(g*255)) << 8 | (int)(b*255);
-    [self sendCommand:[NSString stringWithFormat:@"c%ld", fullColor]];
+    [self sendCommand:[NSString stringWithFormat:@"c?a=%ld", fullColor]];
 }
 
 - (void)picker:(ColorPickerImageView*)picker touchedColor:(UIColor*)color inPoint:(CGPoint)point {

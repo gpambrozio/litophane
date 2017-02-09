@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Picked Color Delegate-->
@@ -13,16 +18,19 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvl-0R-m9d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvl-0R-m9d">
                                 <rect key="frame" x="2" y="57" width="315" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="xXr-WO-2En"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="color-picker.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRS-Xt-C1R" customClass="ColorPickerImageView">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="color-picker.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRS-Xt-C1R" customClass="ColorPickerImageView">
                                 <rect key="frame" x="37" y="127" width="247" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="b5m-0k-XNu"/>
@@ -32,7 +40,7 @@
                                     <outlet property="pickedColorDelegate" destination="BYZ-38-t0r" id="yiB-x4-LGG"/>
                                 </connections>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-Rw-Bl6">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-Rw-Bl6">
                                 <rect key="frame" x="34" y="86" width="251" height="31"/>
                                 <connections>
                                     <action selector="brightnessChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4od-22-QDB"/>
@@ -40,66 +48,89 @@
                             </slider>
                             <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2f-2n-ayK" customClass="ColorPickerLens">
                                 <rect key="frame" x="29" y="497" width="66" height="115"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-07-GEe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-07-GEe">
                                 <rect key="frame" x="64" y="522" width="193" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="0g7-qs-WSH"/>
+                                </constraints>
                                 <state key="normal" title="Set Wake Time">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="setWakeTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7b-h9-tHc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxK-xy-ic2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxK-xy-ic2">
                                 <rect key="frame" x="64" y="255" width="193" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="nXi-Dd-e1j"/>
+                                </constraints>
                                 <state key="normal" title="Turn On/Off">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="68o-al-4dm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="IP: ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-0A-OJR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP: ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-0A-OJR">
                                 <rect key="frame" x="84" y="28" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPO-82-oA2">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPO-82-oA2">
                                 <rect key="frame" x="0.0" y="298" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="467305200.005436">
                                     <!--2015-10-23 15:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-oK-3rl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-oK-3rl">
                                 <rect key="frame" x="98" y="222" width="125" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="EGZ-gt-oBd"/>
+                                    <constraint firstAttribute="width" constant="125" id="gSK-d7-OML"/>
+                                </constraints>
                                 <state key="normal" title="Rainbow">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="rainbow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fy6-tE-ZMl"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k9i-oK-3rl" firstAttribute="top" secondItem="pRS-Xt-C1R" secondAttribute="bottom" constant="1" id="33q-DK-RAu"/>
-                            <constraint firstItem="pRS-Xt-C1R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cu-YL-qzK"/>
-                            <constraint firstItem="ySX-07-GEe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fwk-Cf-QFk"/>
-                            <constraint firstItem="cPO-82-oA2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MBV-gA-AYM"/>
-                            <constraint firstItem="oHN-0A-OJR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="cBC-ik-kft"/>
-                            <constraint firstItem="oHN-0A-OJR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcf-ee-Tvm"/>
-                            <constraint firstItem="ySX-07-GEe" firstAttribute="top" secondItem="cPO-82-oA2" secondAttribute="bottom" id="on8-s9-f0e"/>
-                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zdw-RW-deS"/>
+                            <constraint firstItem="oHN-0A-OJR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="13o-gh-y6f"/>
+                            <constraint firstItem="uvl-0R-m9d" firstAttribute="centerX" secondItem="cPO-82-oA2" secondAttribute="centerX" id="1cG-sz-YKz"/>
+                            <constraint firstItem="uvl-0R-m9d" firstAttribute="top" secondItem="oHN-0A-OJR" secondAttribute="bottom" constant="8" symbolic="YES" id="2el-1q-b5R"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="oHN-0A-OJR" secondAttribute="centerX" id="5l4-RM-5vU"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="top" secondItem="pRS-Xt-C1R" secondAttribute="bottom" id="5oI-Fn-2L6"/>
+                            <constraint firstItem="IxK-xy-ic2" firstAttribute="leading" secondItem="ySX-07-GEe" secondAttribute="leading" id="7h2-r1-D8s"/>
+                            <constraint firstItem="cPO-82-oA2" firstAttribute="top" secondItem="k9i-oK-3rl" secondAttribute="bottom" constant="40" id="B3M-d8-lpm"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="IxK-xy-ic2" secondAttribute="centerX" id="Io4-GB-z1u"/>
+                            <constraint firstItem="IxK-xy-ic2" firstAttribute="top" secondItem="pRS-Xt-C1R" secondAttribute="bottom" constant="33" id="OmP-fB-1rm"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="82" id="UdB-WT-HoC"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="222" id="X91-xw-LVY"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="ySX-07-GEe" secondAttribute="centerX" id="XaY-f9-87A"/>
+                            <constraint firstItem="IxK-xy-ic2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="a1b-Jc-DqJ"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="pRS-Xt-C1R" secondAttribute="centerX" id="c43-A6-r1u"/>
+                            <constraint firstItem="ySX-07-GEe" firstAttribute="top" secondItem="cPO-82-oA2" secondAttribute="bottom" constant="8" symbolic="YES" id="k2q-nT-Msw"/>
+                            <constraint firstItem="uvl-0R-m9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-14" id="lHF-Ir-s8V"/>
+                            <constraint firstItem="fT0-Rw-Bl6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="pMb-aC-QhX"/>
+                            <constraint firstItem="k9i-oK-3rl" firstAttribute="centerX" secondItem="cPO-82-oA2" secondAttribute="centerX" id="qpJ-pP-O1r"/>
+                            <constraint firstItem="oHN-0A-OJR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="uXg-Mr-sXR"/>
+                            <constraint firstItem="fT0-Rw-Bl6" firstAttribute="top" secondItem="uvl-0R-m9d" secondAttribute="bottom" constant="1" id="upQ-qD-07f"/>
+                            <constraint firstItem="uvl-0R-m9d" firstAttribute="centerX" secondItem="fT0-Rw-Bl6" secondAttribute="centerX" id="yc8-Md-SkW"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="colorPicker" destination="pRS-Xt-C1R" id="VLy-YO-9W5"/>
                         <outlet property="labelIP" destination="oHN-0A-OJR" id="U5e-EL-28A"/>
